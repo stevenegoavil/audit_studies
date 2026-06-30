@@ -31,6 +31,7 @@ require(msg.value > 0 && contributions[msg.sender] > contributions[owner]);
 [High] Inconsistent ownership checks between contribute() and receive() allow any address to trivially become owner, resulting in complete drainage of contract funds via withdraw().
 
 **Solodit Match:**
-[TODO - find and link a real access-control/ownership-takeover finding from Solodit]
+https://solodit.cyfrin.io/issues/alchemix-addreward-access-control-can-be-bypassed-in-bribe-contract-immunefi-alchemix-git Similar exploit to Fallback contract, in Bribe.sol file both `notifyRewardAmount()` and `addRewardToken()` call function `_addRewardToken()` - restrictions are not equal, `notifyRewardAmount()` is missing `require(msg.sender == gauge, "not being set by a gauge")`
+Fix: Put the `require(msg.sender == gauge, "not being set by a gauge")` in `_addRewardToken()` and leave `addRewardToken()` blank if this is the standard or simply put `require(msg.sender == gauge, "not being set by a gauge")` in `notifyRewardAmount()`
 
 ---
