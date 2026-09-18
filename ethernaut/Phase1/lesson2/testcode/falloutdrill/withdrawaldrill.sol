@@ -9,6 +9,7 @@ contract withdrawaldrill {
         _;
     }
     function withdrawal() public onlyOwner{
-        payable(owner).transfer(address(this).balance);
+        (bool success, ) = payable(owner).call{value: address(this).balance}("");
+        require(success, "Transfer failed");
     }
 }
