@@ -1,7 +1,12 @@
 ## Daily Study Grind Quest (1-2 hrs)
 
 □ Quest 1 — Warm-up rep (10-15 min)
-Rewrite one function or small contract from a level you've already completed, blind, no looking. Rotate through past levels so nothing goes stale.
+Rewrite one function or small contract from a level you've already completed, blind, no looking. Rotate through past levels so nothing goes stale.  
+Be able to answer these questions:  
+- What does this contract guarantee?
+- Where could that guarantee break?
+
+- If I only had 30 seconds, where would I look first?
 
 □ Quest 2 — Main level work (bulk of session)
 Open the current Ethernaut level. Read cold. Write down: what does this contract do, what looks suspicious, what's your guess at the vulnerability — before touching console. Then exploit it.
