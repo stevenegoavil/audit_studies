@@ -2,7 +2,8 @@
 
 **Bug Class:** Weak/Predictable Randomness
 **Severity:** High (in production) / Trivial (this instance) (Impact: full, guaranteed exploitation of any value-bearing randomness | Likelihood: trivial to trigger)
-**Solodit Tags:** `tag1`, `tag2`, `tag3` 
+**Solodit Tags:** didnt use tag this time - I just searched the web for blockhash vunerabilities and found a bunch of 2023 randomness vunerabilities on github
+This time was a github find!
 
 ---
 
@@ -57,13 +58,9 @@ Replace on-chain blockhash-derived randomness with Chainlink VRF: an oracle gene
 
 ---
 
-### Solodit Match
+### Github Match
 
-- *Finding 1* — [title + link]. Severity: [X]. [Why it's similar.]
-- *Finding 2* — [title + link]. Severity: [X]. [Why it's similar.]
-
-*If no direct match exists, note the closest adjacent class and
-explain why it's adjacent.*
+"Bad sources of randomness" — Code4rena, NextGen contest, Oct 2023, Issue 407. Severity: Medium. calculateTokenHash() derives a token hash using blockhash(block.number - 1) combined with other block-derived "random" values (block.prevrandao, block.timestamp) via keccak256. Same root mechanism as CoinFlip — hashing multiple predictable block values together doesn't add real entropy, it just obscures the predictability. Finding also notes an unused _saltfun_o parameter that was clearly intended to add salt but was never wired in. Cross-references a matching finding in a separate contest (Holograph), confirming this is a recurring, common bug class, not a one-off.
 
 ---
 
