@@ -62,3 +62,33 @@
         target.releaseFunds();
 }```
 40. ```target.setAdmin(msg.sender);```
+
+## Section E
+
+seems to be low-level call only
+
+reference
+        (bool success,) = target.call(
+            abi.encodeWithSignature("flip(bool)", side)
+        );
+        require(success);
+
+41. ``` (bool success,) = target.call (abi.encodeWithSignature("reset()", "")); require(success); ```
+42. ```(bool success,) = target.call (abi.encodedWithSignature("flip(bool)", side)); require(success); ```
+43. ``` (bool success,) = target.call(abiencodedWithSignature("deposit(uint256)", "500")); require(success); ```
+44. ```(bool success,) = target.call(abiencodedWithSignature("setOwner(address)", "msg.sender")); require(success); ```
+45. ``` (bool success,) = target.call(abiencodedWithSignature("guess(uint8)", myGuess)); require(success);```
+46. ```(bool success, ) = target.call(abiencodeWithSignature("","")); require(success);```
+47. ``` (bool success, ) = target.call(abiencodeWithSignature("claim()", "")); require(success);```
+48. ```(bool success,) = target.call(abiencodeWithSignature("vote(bool)","true")); ```
+49. ```(bool success, ) = target.call(abiencodeWithSignature(attack(address,uint256), "msg.sender, 42")); require(success); ```
+50. 
+```
+address public target
+constructor(address _target){
+    target = _target
+}
+function hack() public {
+    (bool success,) = target.call(abiencodeWithSignature("flip(bool)", "true"));
+    require(success);
+} ```

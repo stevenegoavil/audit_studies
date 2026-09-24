@@ -1,4 +1,4 @@
-## Level X — [Name]
+## Level 3 — CoinFlip
 
 **Bug Class:** [e.g., Reentrancy / Access Control / Delegatecall]
 **Severity:** [High / Medium / Low] (Impact: [what breaks] | Likelihood: [how likely])
