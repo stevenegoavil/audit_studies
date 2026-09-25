@@ -2,8 +2,9 @@
 
 **Bug Class:** Weak/Predictable Randomness
 **Severity:** High (in production) / Trivial (this instance) (Impact: full, guaranteed exploitation of any value-bearing randomness | Likelihood: trivial to trigger)
-**Solodit Tags:** didnt use tag this time - I just searched the web for blockhash vunerabilities and found a bunch of 2023 randomness vunerabilities on github
-This time was a github find!
+**Solodit Tags:** didn't use tags this time — searched the web directly for blockhash vulnerabilities and found a batch of 2023 randomness vulnerabilities on GitHub. This time was a GitHub find, not a Solodit search!
+
+**Github Link:** https://github.com/code-423n4/2023-10-nextgen-findings/issues/407#1
 
 ---
 
