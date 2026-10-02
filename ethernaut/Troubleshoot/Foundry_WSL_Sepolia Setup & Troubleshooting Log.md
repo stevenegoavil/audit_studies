@@ -6,7 +6,7 @@ Full record of getting Foundry working from a fresh Windows machine, plus every 
 
 ## Setup — From Zero
 
-### 1. Install WSL (Windows Subsystem for Linux)
+### 1. Install WSL (Windows Subsystem for Linux) - only an issue while I have windows
 Why: Foundry's installer and tools (`forge`, `cast`, `anvil`) are Unix-native. PowerShell can't run `curl -L ... | bash` — no `bash`, no Unix-style `curl`. WSL gives you a real Ubuntu Linux environment inside Windows.
 
 ```powershell
