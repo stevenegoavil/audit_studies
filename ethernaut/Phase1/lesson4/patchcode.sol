@@ -23,3 +23,11 @@ function changeOwner(address _newowner) public notlastowner onlywallet {
 }
 
 // this is a triple protection without changing much of the current code and is the true intension of the code
+
+// this is incorrect
+//simple fix is needed, do not use tx.origin for secuirty purposes
+
+modifier onlyowner(){
+    require(msg.sender == owner, "person accessing contract needs to be owner");
+    _;
+}// this fixes the whole phising issue in telephone contract and is standard practice
